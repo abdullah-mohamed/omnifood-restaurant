@@ -1,0 +1,535 @@
+/* -------------------------------------------- */
+/* BASIC SETUP */
+/* -------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    text-rendering: optimizeLegibility; /* make fonts render in a perfect way*/
+    /* for responsive design */
+    overflow-x: hidden;
+    color: #5a5a5a;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* -------------------------------------------- */
+/* REUSABLE ELEMENTS */
+/* -------------------------------------------- */
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 80px 0px;
+}
+
+.box {
+     padding: 1%;                                                      /* puts a spacing between paragraphs aligned next to each others*/
+}
+
+.clearfix {zoom:1;}
+.clearfix:after{
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/* -------------------------------------------- */
+/* headings */
+/* -------------------------------------------- */
+
+h1,
+h2,
+h3{
+    font-weight: 300;
+    text-transform: uppercase;                                          /* the next 3 rules are for big headers mainly*/            
+    letter-spacing: 1px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 240%;                                                    /* for responsive, now it is about 48px*/
+    color: #fff;
+    word-spacing: 4px;
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";                                                      /* must use whenever ":after" pseudo-class is used*/
+    width: 100px;
+    margin: 0px auto;                                                  /* centers the line */
+    margin-top: 30px;                                                  /* give space between this element and the h2 before it, because for some reason applying "margin-bottom:30px" to the h2 element doesn't work to seperate between it and this element as if this element was a part of it.*/
+}
+
+/* -------------------------------------------- */
+/* PARAGRAPHS */
+/* -------------------------------------------- */
+
+.long-copy {
+    line-height: 145%;
+    width: 70%;                          /* to put less characters inside of the line. */
+    margin-left: 15%;                    /* to center it after we changed it width. */
+}
+
+.box p{
+    font-size: 90%;                                                    /* grid text elements have less size as there is alot of them */
+    line-height: 145%;
+}
+
+.how-it-works-p-elements {
+    font-size: 90%;
+    margin-bottom: 40px;
+}
+
+/* -------------------------------------------- */
+/* BUTTONS */
+/* -------------------------------------------- */
+
+.btn:link,
+.btn:visited {
+    display: inline-block;                                               /* allows you to add padding and margin to inline elements */
+    padding: 10px 30px;
+    font-weight: 300;
+    border-radius: 200px;
+    border: 1px solid #e67e22;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;          /* simple animation */
+}
+
+.btn-full:link,
+.btn-full:visited {
+    background-color: #e67e22;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    color: #e67e22;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #cf6d17;
+}
+
+.btn-full:hover,
+.btn-ful:active {
+    border: 1px solid #cf6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #cf6d17;
+    color: #fff;
+}
+
+/* -------------------------------------------- */
+/* Icons */
+/* -------------------------------------------- */
+
+.icon-big {
+    display: block;
+    font-size: 350%;
+    margin-bottom: 10px;
+    color: #e67e22;
+}
+
+/* -------------------------------------------- */
+/* HEADER */
+/* -------------------------------------------- */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/hero.jpg);            /* make image darker with gradient*/
+    background-size: cover;                                                                                     /* make the image not zoomed IN*/
+    background-position: center;                                                /* center the image*/
+    height: 100vh;                                                              /* make the image has the whole height of the browsers' viewport*/
+}
+
+.hero-text-box {
+    position: absolute;                                                 /* posistion the element in the center veritcally (the 5 rules) */
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    height: 100px;
+    margin-top: 10px;
+    width: auto;
+    float: left;
+}
+
+.main-nav {
+    float: right;
+    list-style: none;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 55px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding: 8px 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;                                  /* if u remove this, the following hover links will move awkwardly, you create them but make them transparent, so their place is already there reserved when they appear.*/
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #cf6d17;
+}
+
+/* sticky nav */
+/*.sticky .row {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+}*/
+
+/* -------------------------------------------- */
+/* features section */
+/* -------------------------------------------- */
+
+.section-features .long-copy{
+    margin-bottom: 30px;
+}
+
+/* -------------------------------------------- */
+/* meals section */
+/* -------------------------------------------- */
+.section-meals {
+    padding: 0px;
+}
+
+.meals-showcase {
+    list-style: none;
+    width: 100%;
+} 
+
+.meals-showcase li{
+    display: block;
+    float:left;
+    width: 25%;
+}
+
+.fav-image {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;                                               /* when images were scaled up in line 3 of ".fav-image img", they overflowed out of their figure container. This line hides the overflow and make the images total width 100% of the browser again*/
+    background-color: #000;
+}
+
+.fav-image img {
+    width:100%;
+    height: auto;
+    transition: transform 0.5s, opacity 0.5s;
+    transform: scale(1.15);
+    opacity: 0.7;                                                  /* this will make the image darker but we need to give its container a black background-color in line 4 of ".fav-image" */
+}
+
+.fav-image img:hover {
+    opacity: 1;
+    transform: scale(1.03);                                         /* this was scale(1) but that made a little white space appear beneath the photo when hovered on. scale(1.03) fixed that.*/
+}
+
+/* -------------------------------------------- */
+/* how it works section */
+/* -------------------------------------------- */
+.section-how-it-works{
+    background-color: #eaeaea;
+}
+.paragraphs-how-it-works div {
+    display: inline-block;
+    color: #e67e22;
+    height: 55px;
+    width: 55px;
+    border: 2px solid #e67e22;
+    border-radius: 50%;
+    text-align: center;
+    padding: 10px;
+    float: left;
+    font-size: 120%;
+}
+
+.paragraphs-parent {
+    padding-top: 5%;
+}
+
+.phone-image img{
+    width: 40%;
+    height: auto;
+    margin-left: 50%;
+}
+
+.store-images {
+    margin-top: 75px;
+}
+
+.store-images img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* -------------------------------------------- */
+/* cities section */
+/* -------------------------------------------- */
+.section-cities div div img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.section-cities div div i {
+    font-size: 120%;
+    color: #e67e22;
+    margin-right: 10px;
+    display: inline-block;
+    margin-bottom: 5px;
+    /* TO align icons with text */
+    /* 
+        display: inline-block;       // now we can assign them a width so they all have the same size
+        width: 30px;
+        text-align:center;           // because it is an inline-block element
+        font-size: 120%;             // make them bigger
+        vertical-align: middle;
+        line-height: 120%;           // change this value to get what you want
+        margin-top: -ve value;       // change this value to get what you want
+        margin-right: -ve value;     // change this value to get what you want
+        
+    */
+}
+
+.section-cities div div a {
+    color: #e67e22;
+    border-bottom: 1px solid #e67e22;
+    padding-bottom: 2px;
+}
+
+/* -------------------------------------------- */
+/* testmonnials section */
+/* -------------------------------------------- */
+.section-testmonials {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/back-customers.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;  /* this makes the image fixed as the user scrolls the page*/
+    color: white;
+}
+
+.section-testmonials div div .quote {
+    content: "\201C";
+    font-size: 400%;
+}
+
+.section-testmonials div div p {
+    padding: 2%;                                 /* use this with columns that are close to one another*/
+    margin-left: 0;
+    font-style: italic;                          /* testimonials are usually Italic*/
+    font-size: 130%;
+    line-height: 140%;
+    margin-bottom: 30px;
+}
+
+.section-testmonials div div img {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.section-testmonials div div div .name {
+    display: inline-block;
+    height: 50px;
+    vertical-align: middle;
+    margin-bottom: 15px;
+}
+
+/* -------------------------------------------- */
+/* prices section */
+/* -------------------------------------------- */
+.section-prices {
+    background-color: #e0e0e0;
+}
+
+.section-prices div div a{
+    display: inline-block;
+    margin: 3% 26%;
+    text-align:center;
+}
+
+.prices-section-icons-div div{
+    background-color: #fff ;
+    padding: 4% 2%;
+    border-radius: 4px;
+}
+
+.prices-section-icons-div div i {
+    margin: 10px;
+    color: #e67e22;
+}
+.section-prices .row .col  {
+    background-color: #ededed;
+    border-radius: 4px;
+    /*padding: 1%;*/
+}
+
+.plan-details {
+    padding: 2%;
+    height: 155px;
+}
+
+.plan-details div span {
+    color: #e67e22;
+    font-size: 300%;
+}
+
+/* -------------------------------------------- */
+/* contact form section */
+/* -------------------------------------------- */
+.section-contact form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.section-contact .input-field {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+
+.input-field label {
+    display: inline-block;
+    width: 35%;
+}
+
+form input[type="text"],
+form select,
+form textarea{
+    width: 60%;
+    vertical-align: top;
+    display: inline-block;                                        /* to apply styles to them*/
+    padding: 7px;                                                 /* use it almost for all inputs*/
+    border-radius: 4px;                                           /* use it almost for all inputs*/
+    border: 1px solid #ccc;                                       /* use it almost for all inputs*/
+}
+
+ /* to get rid of the outline around the element the user clicks on*/
+*:focus {
+        /*outline:none;*/                                            
+}
+
+form select {
+    background-color: #e6e6e6;
+}
+
+form a {
+    display: inline-block;
+    margin-left: 35%;
+}
+
+/*VERY IMPORTANT*/
+/* TO make a submit button for the form, you use an input tag of type 'submit', but you want it to have the styles of your buttons and you can't use aa a tag, then simply add the 'input[type="submit"]' to the btn, btn-full classes styles above*/
+
+/* -------------------------------------------- */
+/* footer */
+/* -------------------------------------------- */
+footer {
+    background-color: #333;                                           /*use this instead of black*/
+    color: #afafaf;
+    padding: 50px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul li {
+    float:left;
+    margin-right: 20px;
+}
+
+footer .left-list {
+    float: left;
+}
+
+footer .left-list li {
+    transition: color 0.2s;
+}
+
+footer .left-list li:hover {
+    color: #d1d1d1;
+}
+
+footer .right-list {
+    float: right;
+    transition: color 0.2s;
+}
+
+footer .row {
+    margin-bottom: 20px;
+}
+
+.small-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.small-container p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#facebook:hover{
+    color: #3b5999;
+}
+
+#twitter:hover{
+    color: #55acee;
+}
+
+#gmail:hover{
+    color: #dd4b39;
+}
+
+#instagram:hover{
+    color: #e4405f;
+}

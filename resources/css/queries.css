@@ -1,0 +1,124 @@
+/* big tablets up to 1200px. */
+/* our row was defined 1140px, so we want our website to change its look when it gets close to that value. */
+@media only screen and (max-width: 1200px) {
+    .hero-text-box {
+        width: 100%;
+        padding: 0 2%;
+    }
+    
+    .row { padding: 0 2%; }
+    
+    .section-prices div div a {margin: 3% 23%;}
+}
+
+
+/* Ipad(portrait mode) and small tablets: from 768 to 1023. */
+/* Ipad(landscape mode) has 1024px. */
+@media only screen and (max-width: 1023px) {
+    body { font-size: 18px; } /* now you will get the benefit of declaring all font sizes relative to the base font size. */
+    
+    section { padding: 60px 0;}
+    
+    .long-copy { 
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    .how-it-works-p-elements {margin-bottom: 10px;}
+    
+    .paragraphs-how-it-works div {
+        height: 30px;
+        width: 30px;
+        padding: 5px;
+        font-size: 80%;
+        margin-right: 10px;
+    }
+    
+    .paragraphs-parent { padding-top: 2%; }
+    
+    .store-images {margin-top: 30px;}
+    
+    .store-images img {height: 40px;}
+    
+    .phone-image img{
+        width: 50%;
+        margin-left: 40%;
+    }
+    
+    .section-cities div div{font-size: 90%;}
+    
+    .prices-section-icons-div {font-size: 90%;}
+    
+    .section-prices div div a {margin: 3% 15%;}
+    
+    .section-contact form {width: 80%;}
+}
+
+
+/* Small phones to small tablets: from 481px to 767px. */
+/* because the width of the ipad is 768px. */
+/* here we start dumping columns and make all of them 100% of the width. 
+   we also hide the nav into a burger button.
+*/
+@media only screen and (max-width: 767px) {
+    body {font-size: 16px;}
+    section {padding: 30px 0;}
+    
+    .row,
+    .hero-text-box { padding: 0 4%;}
+    
+    /* to stack elements on top of each others manually -- THIS IS MAGIC -- */
+    .col { 
+        width: 100%;
+        margin: 0 0 4% 0;
+    }
+    
+    .main-nav{ display: none;}
+    
+    header { height: 400px;}
+    
+    header h1 { font-size: 150%;}
+    
+    h2 {font-size: 140%;}
+    
+    .section-features .long-copy{
+        width: 90%;
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+    
+    .phone-image img{
+        width: 30%;
+        margin-left: 35%;
+    }
+    
+    .section-cities div div img {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    
+    .section-testmonials div div .quote {
+        font-size: 400%;
+        height: 40px;
+    }
+    
+    .plan-details div span {font-size: 200%;}
+    
+    .plan-details {height: 100px;}
+    
+    .plan-details h3 {margin-bottom: 5px;}
+    
+    .prices-section-icons-div div{padding: 1% 2%;}
+    
+    .section-prices div div a{margin: 3% 33%;}
+    
+    .section-contact form {width: 90%;}
+    
+    footer {padding: 20px;}
+}
+
+
+/* Small phones: from 0 to 480px. */
+@media only screen and (max-width: 480px;) {
+    
+}
